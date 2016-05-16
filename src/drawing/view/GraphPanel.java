@@ -9,12 +9,12 @@ import javax.swing.JPanel;
 
 public class GraphPanel extends JPanel
 {
-	private int [] graphSource;
+	private int [] graphStuff;
 	
 	public GraphPanel()
 	{
-		//initialize graphSource here
-		graphSource = new int[] {2, 5, 7, 323, 23,24,37};
+		//graphStuff initialized
+		graphStuff = new int[] {24, 34, 82, 343, 69,81,37, 68, 95, 100};
 		setupPanel();
 	}
 	
@@ -27,21 +27,22 @@ public class GraphPanel extends JPanel
 	{
 		super.paintComponent(currentGraphics);
 		Graphics2D mainGraphics = (Graphics2D) currentGraphics;
-		for(int index = 0; index < graphSource.length; index++)
+		for(int index = 0; index < graphStuff.length; index++)
 		{
-			//Draw a rectangle for each value in the array.
-			int height = this.getHeight()/graphSource.length;
-			int width = (int)((graphSource[index] / 200.00) * this.getWidth());
-			int xPosition = 0;
-			int yPosition = height * index;
-			
+			//Random colorizer
 			int red = (int)(Math.random() * 256);
 			int green = (int)(Math.random() * 256);
 			int blue = (int)(Math.random() * 256);
 			int alpha = (int)(Math.random() * 256);
 			
-			mainGraphics.setColor(new Color(red, green, blue, alpha));
+			//Draw a rectangle for each value in the array.
+			int height = this.getHeight()/graphStuff.length;
+			int width = (int)((graphStuff[index] / 200.00) * this.getWidth());
+			int xPosition = 0;
+			int yPosition = height * index;
 			
+			//Sets the color, and fills 'em
+			mainGraphics.setColor(new Color(red, green, blue, alpha));
 			mainGraphics.fill(new Rectangle(xPosition, yPosition, width, height));
 		}
 	}

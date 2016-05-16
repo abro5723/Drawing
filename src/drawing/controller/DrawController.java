@@ -1,22 +1,41 @@
 package drawing.controller;
 
-import drawing.view.Drawing;
 import drawing.view.DrawingFrame;
-import drawing.view.DrawingShapes;
+import drawing.view.DrawingPanel;
 
-public class DrawController 
+public class DrawController
 {
-	private DrawingFrame baseFrame;
-	private Drawing shapePanel;
-	private DrawingShapes drawPanel;
 	
+	private DrawingPanel myDisplay;
+	private DrawingFrame baseFrame;
+
 	public DrawController()
 	{
 		baseFrame = new DrawingFrame(this);
 	}
-
+	
 	public void start()
 	{
 		
+	}
+	
+	public DrawingPanel getMyDisplay()
+	{
+		return myDisplay;
+	}
+
+	public void setMyDisplay(DrawingPanel myDisplay)
+	{
+		this.myDisplay = myDisplay;
+	}
+
+	public DrawingFrame getBaseFrame()
+	{
+		return baseFrame;
+	}
+
+	public void setBaseFrame(DrawingFrame baseFrame)
+	{
+		this.baseFrame = baseFrame;
 	}
 }
